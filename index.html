@@ -27,15 +27,30 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{
 .brand{display:flex;align-items:center;gap:10px;padding:4px 3px 12px;font-size:17px;font-weight:750;letter-spacing:.2px}.brand-logo{width:46px;height:42px;object-fit:contain;flex-shrink:0;image-rendering:auto}
 .newchat,.secondary,.file-btn{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:10px;padding:10px 12px;text-align:left}.newchat:hover,.secondary:hover,.file-btn:hover{background:var(--panel2)}
 .side-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;padding:8px 4px 0}
-.history{overflow:auto;display:flex;flex-direction:column;gap:4px;flex:1}.history-item{border:0;background:transparent;color:var(--muted);text-align:left;padding:9px 10px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.history-item:hover,.history-item.active{background:var(--panel2);color:var(--text)}
+.history{overflow:auto;display:flex;flex-direction:column;gap:5px;flex:1}.history-row{display:flex;align-items:center;gap:4px;min-width:0;border-radius:9px}.history-row:hover,.history-row.active{background:var(--panel2)}.history-item{flex:1;min-width:0;border:0;background:transparent;color:var(--muted);text-align:left;padding:9px 8px 9px 10px;border-radius:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.history-row:hover .history-item,.history-row.active .history-item{color:var(--text)}.delete-chat{flex-shrink:0;border:0;background:transparent;color:#a8a8a8;border-radius:7px;padding:7px 8px;font-size:14px;line-height:1}.delete-chat:hover{background:#501b20;color:#ffb4b4}
 .side-bottom{border-top:1px solid var(--line);padding-top:12px;display:grid;gap:8px}.status{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:center}.dot{width:8px;height:8px;border-radius:50%;background:#e0b65b;flex-shrink:0}.dot.ok{background:var(--accent)}.dot.bad{background:var(--danger)}
 .main{min-width:0;display:flex;flex-direction:column;height:100vh}.topbar{height:60px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 22px;flex-shrink:0}.top-title{font-weight:650}.top-actions{display:flex;gap:8px}.iconbtn{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:9px;padding:7px 10px}
 .chat{flex:1;overflow:auto;padding:28px 18px 18px;scroll-behavior:smooth}.welcome{max-width:780px;margin:9vh auto 0;text-align:center}.welcome h1{font-size:clamp(28px,4vw,42px);letter-spacing:-1.5px;margin:0 0 12px}.welcome p{color:var(--muted);font-size:15px;margin:0 auto 25px;max-width:580px}.suggestions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;text-align:left}.suggestion{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;color:var(--text);text-align:left}.suggestion strong{display:block;margin-bottom:4px}.suggestion span{font-size:12px;color:var(--muted)}
-.message{max-width:820px;margin:0 auto 24px;display:flex;gap:12px;align-items:flex-start}.avatar{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-weight:800;flex-shrink:0}.message.user .avatar{background:var(--blue);color:#101525}.message.ai .avatar{background:var(--accent);color:#102017}.content{min-width:0;flex:1}.who{font-size:12px;color:var(--muted);margin:2px 0 6px}.bubble{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.7}.message.user .bubble{background:var(--panel);padding:11px 14px;border-radius:4px 13px 13px 13px;display:inline-block;max-width:100%}.message.ai .bubble{padding:1px 0}.bubble code{background:#2a2d35;padding:2px 5px;border-radius:4px}.bubble pre{white-space:pre-wrap;overflow:auto;background:#090909;padding:12px;border:1px solid var(--line);border-radius:9px}
+.message{max-width:900px;margin:0 auto 20px;display:flex;gap:10px;align-items:flex-start;width:100%}.avatar{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;font-weight:800;flex-shrink:0}.message.user{justify-content:flex-end;flex-direction:row-reverse}.message.user .avatar{background:#2563eb;color:#fff}.message.ai{justify-content:flex-start}.message.ai .avatar{background:#16a085;color:#06251f}.content{min-width:0;flex:0 1 auto;max-width:calc(100% - 42px)}.who{font-size:12px;color:var(--muted);margin:2px 0 6px}.message.user .who{text-align:right}.bubble{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.7}.message.user .bubble{background:linear-gradient(135deg,#2459d3,#5146c8);color:#fff;padding:11px 14px;border-radius:16px 5px 16px 16px;display:inline-block;max-width:100%;box-shadow:0 5px 18px #1d4ed833}.message.ai .bubble{background:#172923;color:#e9fff7;padding:11px 14px;border:1px solid #285244;border-radius:5px 16px 16px 16px;display:inline-block;max-width:100%;box-shadow:0 5px 18px #0003}.bubble code{background:#2a2d35;padding:2px 5px;border-radius:4px}.bubble pre{white-space:pre-wrap;overflow:auto;background:#090909;padding:12px;border:1px solid var(--line);border-radius:9px}
 .typing{display:flex;gap:5px;padding:9px 0}.typing i{width:6px;height:6px;background:var(--muted);border-radius:50%;animation:pulse 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}@keyframes pulse{50%{opacity:.25;transform:translateY(-3px)}}
 .composer-area{padding:8px 18px 15px;flex-shrink:0}.composer-wrap{max-width:820px;margin:auto}.attachments{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 8px}.chip{background:#291012;border:1px solid #7c151b;color:#ffffff;border-radius:9px;padding:5px 8px;font-size:12px;display:flex;gap:8px;align-items:center}.chip button{background:transparent;border:0;color:inherit;padding:0 2px}.composer{display:flex;gap:9px;align-items:flex-end;background:var(--panel);border:1px solid #414550;border-radius:18px;padding:10px 11px 10px 14px;box-shadow:0 8px 25px #0008}.composer textarea{flex:1;min-width:0;resize:none;border:0;outline:0;background:transparent;color:var(--text);max-height:160px;min-height:28px;padding:5px 0}.composer textarea::placeholder{color:#858b98}.send{background:var(--accent);border:0;color:#ffffff;font-weight:800;border-radius:11px;padding:8px 13px;min-width:65px}.hint{font-size:11px;color:var(--muted);text-align:center;margin-top:7px}.file-btn{padding:8px 10px;white-space:nowrap}.file-btn input{display:none}
 .overlay{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:18px;z-index:5}.overlay.open{display:flex}.modal{width:min(560px,100%);max-height:90vh;overflow:auto;background:var(--side);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 20px 70px #0008}.modal h2{font-size:18px;margin:0 0 5px}.modal p{color:var(--muted);font-size:13px}.field{display:grid;gap:6px;margin:15px 0}.field label{font-size:12px;color:var(--muted)}.field input,.field select,.field textarea{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px;outline:none}.field textarea{min-height:120px;resize:vertical}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.primary{background:var(--accent);color:#ffffff;border:0;border-radius:9px;padding:9px 13px;font-weight:700}.notice{font-size:12px;color:var(--muted);padding:10px 12px;background:#171717;border-radius:9px}
-@media(max-width:760px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{padding:0 13px}.chat{padding:20px 12px}.composer-area{padding:8px 10px 12px}.suggestions{grid-template-columns:1fr}.welcome{margin-top:5vh}.top-actions .iconbtn{padding:7px}.message{gap:9px}}
+.image-result{display:block;max-width:min(100%,720px);height:auto;border-radius:12px;border:1px solid var(--line);margin-top:8px}.image-download{display:inline-block;margin-top:8px;color:#fff;background:var(--panel2);padding:7px 10px;border-radius:8px;text-decoration:none}.image-mode.active{background:#5a1519;border-color:var(--accent)}.mode-choices{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.mode-choice{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:18px 12px;border-radius:12px;text-align:center}.mode-choice strong{display:block;font-size:16px;margin-bottom:5px}.mode-choice span{color:var(--muted);font-size:12px}.mode-choice:hover{border-color:var(--accent)}body[data-interface="mobile"] .top-title{font-size:13px}body[data-interface="mobile"] .top-actions{gap:4px}body[data-interface="mobile"] .composer{gap:6px;padding:8px}body[data-interface="mobile"] .send,body[data-interface="mobile"] .image-mode{padding:8px 9px;min-width:0;font-size:12px}body[data-interface="mobile"] .file-btn{padding:8px}body[data-interface="mobile"] .hint{font-size:10px}body[data-interface="mobile"] .message{gap:7px}body[data-interface="mobile"] .content{max-width:calc(100% - 34px)}body[data-interface="mobile"] .bubble{font-size:13px}body[data-interface="mobile"] .avatar{width:27px;height:27px}\n@media(max-width:760px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{padding:0 13px}.chat{padding:20px 12px}.composer-area{padding:8px 10px 12px}.suggestions{grid-template-columns:1fr}.welcome{margin-top:5vh}.top-actions .iconbtn{padding:7px}.message{gap:9px}}
+
+.side-tools{display:grid;gap:6px}.side-tools .secondary{padding:8px 10px;font-size:12px}
+.mode-select{max-width:180px;background:var(--panel);padding:7px 8px}
+.feature-modal{width:min(760px,100%)}.feature-body{display:grid;gap:10px}
+.feature-input,.feature-textarea,.feature-select{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px}
+.feature-textarea{min-height:140px;resize:vertical}.feature-list{display:grid;gap:8px;max-height:45vh;overflow:auto}
+.feature-card{border:1px solid var(--line);border-radius:10px;padding:11px;background:var(--panel)}
+.feature-card small{color:var(--muted)}.feature-card a{color:#8ab4ff}.feature-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.feature-card button{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:7px;padding:5px 8px}
+.data-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}.stat{padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+.stat strong{display:block;font-size:19px}.stat span{font-size:11px;color:var(--muted)}
+.image-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}.image-gallery img{width:100%;height:130px;object-fit:contain;background:#101010;border:1px solid var(--line);border-radius:9px}
+.mobile-interface .side-tools{display:none}
+@media(max-width:760px){.mode-select{max-width:85px;font-size:10px}.side-tools{display:none}.top-actions{min-width:0}.top-actions .iconbtn{font-size:12px}.feature-modal{padding:15px}.feature-modal .modal-actions{flex-wrap:wrap}}
+
 </style>
 </head>
 <body>
@@ -43,6 +58,14 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{
   <aside class="sidebar">
     <div class="brand"><span>ICS IA <span style="color:var(--muted);font-weight:500">Beta</span></span></div>
     <button class="newchat" id="newChat">＋ &nbsp; Nueva conversación</button>
+    <div class="side-tools">
+      <button class="secondary" id="projectsBtn">📁 &nbsp; Proyectos</button>
+      <button class="secondary" id="researchBtn">🔎 &nbsp; Investigar en la web</button>
+      <button class="secondary" id="notesBtn">📚 &nbsp; Notas y biblioteca</button>
+      <button class="secondary" id="galleryBtn">🎨 &nbsp; Galería de imágenes</button>
+      <button class="secondary" id="dataBtn">📊 &nbsp; Analizar datos</button>
+      <button class="secondary" id="backupBtn">💾 &nbsp; Copia de seguridad</button>
+    </div>
     <div class="side-label">Conversaciones recientes</div>
     <div class="history" id="history"></div>
     <div class="side-bottom">
@@ -59,20 +82,31 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{
       <div class="composer">
         <label class="file-btn" title="Adjuntar documentos">＋ <input type="file" id="fileInput" multiple accept=".txt,.md,.csv,.json,.html,.htm,.xml,.log,.pdf,.docx,.xlsx,.xls,.tsv"></label>
         <textarea id="prompt" rows="1" placeholder="Escribe tu mensaje a ICS IA…"></textarea>
-        <button class="send" id="sendBtn">Enviar ↑</button>
+        <button class="iconbtn image-mode" id="imageModeBtn" type="button" title="Activar o desactivar la creación de imágenes">🎨 Imagen</button><button class="send" id="sendBtn">Enviar ↑</button>
       </div>
-      <div class="hint">Enter para enviar · Shift+Enter para nueva línea · Comprueba la información importante antes de usarla.</div>
+      <div class="hint" id="hint">Enter para enviar · Shift+Enter para nueva línea · Comprueba la información importante antes de usarla.</div>
     </div></div>
   </main>
+</div>
+<div class="overlay" id="interfaceOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="interfaceTitle">
+    <h2 id="interfaceTitle">¿Cómo quieres usar ICS IA?</h2>
+    <p>Elige la interfaz inicial. Puedes cambiar esta preferencia más adelante desde Configuración.</p>
+    <div class="mode-choices">
+      <button class="mode-choice" id="choosePC"><strong>🖥️ Computadora</strong><span>Diseño amplio con panel lateral e historial.</span></button>
+      <button class="mode-choice" id="chooseMobile"><strong>📱 Dispositivo móvil</strong><span>Controles compactos y espacio optimizado para pantallas táctiles.</span></button>
+    </div>
+  </div>
 </div>
 <div class="overlay" id="settingsOverlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
     <h2 id="settingsTitle">Configuración de ICS IA</h2>
     <p>Esta beta utiliza un servicio de IA en Internet. Las opciones disponibles pueden depender del proveedor y de sus condiciones.</p>
+    <div class="field"><label for="interfaceMode">Interfaz al iniciar</label><select id="interfaceMode"><option value="auto">Automática según el dispositivo</option><option value="pc">Computadora</option><option value="mobile">Dispositivo móvil</option></select></div>
     <div class="field"><label for="model">Modelo</label><select id="model"><option value="google/gemini-3.8-flash">Google Gemini 3.8 Flash (predeterminado)</option><option value="gpt-4o-mini">GPT-4o mini (si está disponible en tu cuenta)</option></select></div>
     <div class="field"><label for="systemPrompt">Instrucciones del asistente</label><textarea id="systemPrompt"></textarea></div>
     <div class="field"><label for="contextLimit">Límite de texto de documentos por conversación (caracteres)</label><select id="contextLimit"><option value="12000">12.000 — conservador</option><option value="24000">24.000 — equilibrado</option><option value="48000">48.000 — documentos más largos</option></select></div>
-    <div class="notice">Los documentos se extraen en tu navegador y su texto se envía al proveedor de IA cuando haces una pregunta sobre ellos. No adjuntes información confidencial o datos personales sin autorización. Las conversaciones se guardan en este navegador.</div>
+    <div class="notice">La creación de imágenes usa puter.ai.txt2img() de Puter.js. La disponibilidad y los posibles costes o autorizaciones dependen del proveedor del servicio. Los documentos se extraen en tu navegador y su texto se envía al proveedor de IA cuando haces una pregunta sobre ellos. No adjuntes información confidencial o datos personales sin autorización. Las conversaciones se guardan en este navegador.</div>
     <div class="modal-actions"><button class="secondary" id="cancelSettings">Cancelar</button><button class="primary" id="saveSettings">Guardar configuración</button></div>
   </div>
 </div>
@@ -88,16 +122,23 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
   const DEFAULT_SYSTEM = `${IDENTITY_SYSTEM}\n\nEres un asistente profesional, claro y colaborativo para tareas de trabajo. Conversa de forma natural y útil. Puedes ayudar a redactar documentos, resumir textos, explicar tablas, revisar datos, comparar información y proponer próximos pasos. Si el usuario aporta documentos, basa las conclusiones en su contenido y distingue claramente entre hechos del documento, inferencias y conocimiento general. No inventes datos que no estén disponibles. Si falta contexto, dilo y pregunta lo necesario. Para análisis de datos, explica el método y señala limitaciones. Responde en español salvo que te pidan otro idioma, salvo que soliciten expresamente una lengua diferente.`;
   const $ = id => document.getElementById(id);
   const STORE_KEY = 'scopeIA.beta.v2';
-  let state = { chats: [], currentId: null, settings: { model: 'google/gemini-3.8-flash', systemPrompt: DEFAULT_SYSTEM, contextLimit: 24000 } };
+  let state = { chats: [], currentId: null, projects: [], notes: [], settings: { model: 'google/gemini-3.8-flash', systemPrompt: DEFAULT_SYSTEM, contextLimit: 24000, interfaceMode: 'auto', memoryEnabled: false, memoryText: '', themeColor: '#e50914', assistantMode: 'general' } };
+  let imageMode = false;
   let pendingFiles = [];
   let isSending = false;
   let docTextTotal = 0;
+  let featureActionHandler = null;
+  let researchResults = [];
+  let recognition = null;
 
   try {
     const saved = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
     if (saved && typeof saved === 'object') state = { ...state, ...saved, settings: { ...state.settings, ...(saved.settings || {}) } };
   } catch(e) {}
   if (!Array.isArray(state.chats)) state.chats = [];
+  if (!Array.isArray(state.projects)) state.projects = [];
+  if (!Array.isArray(state.notes)) state.notes = [];
+  state.settings = { model: 'google/gemini-3.8-flash', systemPrompt: DEFAULT_SYSTEM, contextLimit: 24000, interfaceMode: 'auto', memoryEnabled: false, memoryText: '', themeColor: '#e50914', assistantMode: 'general', ...(state.settings || {}) };
   function persist(){ try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch(e) { setStatus('No hay espacio para guardar más historial en este navegador.', 'bad'); } }
   function currentChat(){ return state.chats.find(c => c.id === state.currentId); }
   function createChat(){
@@ -126,8 +167,25 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
   function renderHistory(){
     const el=$('history'); el.innerHTML='';
     state.chats.forEach(c=>{
-      const b=document.createElement('button'); b.className='history-item'+(c.id===state.currentId?' active':''); b.textContent=c.title||'Nueva conversación'; b.title=c.title||'Nueva conversación';
-      b.onclick=()=>{state.currentId=c.id;pendingFiles=[];renderAll();persist();}; el.appendChild(b);
+      const row=document.createElement('div');
+      row.className='history-row'+(c.id===state.currentId?' active':'');
+      const b=document.createElement('button');
+      b.className='history-item'; b.textContent=c.title||'Nueva conversación'; b.title=c.title||'Nueva conversación';
+      b.onclick=()=>{state.currentId=c.id;pendingFiles=[];renderAll();persist();};
+      const del=document.createElement('button');
+      del.className='delete-chat';del.type='button';del.textContent='🗑';del.title='Eliminar esta conversación';
+      del.setAttribute('aria-label','Eliminar conversación: '+(c.title||'Nueva conversación'));
+      del.onclick=(e)=>{
+        e.stopPropagation();
+        const title=c.title||'Nueva conversación';
+        if(!confirm('¿Seguro que quieres eliminar la conversación "'+title.replace(/"/g,'\\\"')+'"? Esta acción no se puede deshacer.'))return;
+        const idx=state.chats.findIndex(x=>x.id===c.id);
+        if(idx!==-1)state.chats.splice(idx,1);
+        if(state.currentId===c.id)state.currentId=state.chats.length?state.chats[0].id:null;
+        pendingFiles=[];persist();
+        if(!currentChat())createChat();else renderAll();
+      };
+      row.appendChild(b);row.appendChild(del);el.appendChild(row);
     });
   }
   function renderChat(){
@@ -146,7 +204,8 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
     } else {
       c.messages.forEach(m=>{
         const row=document.createElement('div'); row.className='message '+(m.role==='user'?'user':'ai');
-        row.innerHTML=`<div class="avatar">${m.role==='user'?'T':'S'}</div><div class="content"><div class="who">${m.role==='user'?'Tú':'ICS IA'}</div><div class="bubble">${formatText(m.content)}</div></div>`;
+        row.innerHTML=`<div class="avatar">${m.role==='user'?'T':'S'}</div><div class="content"><div class="who">${m.role==='user'?'Tú':'ICS IA'}</div><div class="bubble">${formatText(m.content||'')}</div></div>`;
+        if(m.image){const content=row.querySelector('.content');const img=document.createElement('img');img.className='image-result';img.src=m.image;img.alt=m.content||'Imagen generada por ICS IA';img.loading='lazy';content.appendChild(img);const a=document.createElement('a');a.className='image-download';a.href=m.image;a.download='ics-ia-imagen.png';a.target='_blank';a.rel='noopener';a.textContent='Abrir / guardar imagen';content.appendChild(a);}
         el.appendChild(row);
       });
     }
@@ -211,6 +270,31 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
     }
     return out.join('\n\n---\n\n');
   }
+  function addGeneratedImage(prompt, imageUrl){
+    const c=currentChat(); if(!c)return;
+    c.messages.push({role:'assistant',content:'Imagen generada a partir de: '+prompt,image:imageUrl,time:Date.now()});
+    persist();renderChat();renderHistory();
+  }
+  async function generateImage(prompt){
+    if(!window.puter || !puter.ai || typeof puter.ai.txt2img!=='function'){
+      addMessage('assistant','La función de creación de imágenes no está disponible. Comprueba que Puter.js se haya cargado desde una dirección http:// o https://.');
+      setStatus('Generación de imágenes no disponible','bad');return;
+    }
+    isSending=true;$('sendBtn').disabled=true;$('imageModeBtn').disabled=true;
+    addMessage('user','🎨 Crear imagen: '+prompt);
+    showTyping();setStatus('Generando imagen…');
+    try{
+      const img=await puter.ai.txt2img(prompt);
+      const src=img && (img.src || (typeof img.toString==='function'?img.toString():'')); 
+      removeTyping();
+      if(!src)throw new Error('El proveedor no devolvió una imagen utilizable.');
+      addGeneratedImage(prompt,src);
+      setStatus('Imagen generada · puedes abrirla o guardarla','ok');
+    }catch(err){
+      removeTyping();addMessage('assistant','No he podido crear la imagen. '+((err&&err.message)?err.message:String(err))+' Puedes probar con otra descripción o revisar la disponibilidad del servicio.');
+      setStatus('No se pudo generar la imagen','bad');
+    }finally{isSending=false;$('sendBtn').disabled=false;$('imageModeBtn').disabled=false;$('prompt').focus();}
+  }
   async function sendMessage(){
     if(isSending)return;
     const text=$('prompt').value.trim();
@@ -236,7 +320,17 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
       for(let i=prior.length-1;i>=0;i--){if(prior[i].role==='user'){prior[i]={role:'user',content:finalUserText};break;}}
       const configuredPrompt=state.settings.systemPrompt||DEFAULT_SYSTEM;
       // La identidad institucional se antepone siempre, incluso si el navegador conserva una configuración antigua.
-      const systemContent=configuredPrompt.includes('IDENTIDAD OFICIAL Y PRIORITARIA DE ICS IA') ? configuredPrompt : `${IDENTITY_SYSTEM}\n\nInstrucciones adicionales del asistente:\n${configuredPrompt}`;
+      const modeInstructions = {
+        general: 'Modo general: responde con claridad, utilidad y rigor.',
+        research: 'Modo investigación: separa hechos, hipótesis e incertidumbres; si no puedes verificar fuentes en tiempo real, dilo claramente y nunca inventes citas.',
+        media: 'Modo análisis mediático: examina encuadre, fuentes, lenguaje, omisiones, contexto, sesgos posibles y diferencia entre hecho y opinión; evita conclusiones sin evidencia.',
+        documents: 'Modo documentos: organiza resúmenes, conceptos, citas breves, preguntas abiertas y contradicciones usando los archivos aportados como fuente prioritaria.',
+        writing: 'Modo redacción: entrega textos claros y utilizables, ajustados al público y al tono solicitado.',
+        creative: 'Modo creativo: propone ideas originales y variaciones, respetando las restricciones indicadas.',
+        data: 'Modo datos: describe el método, supuestos, tendencias, limitaciones y conclusiones; no inventes cifras.'
+      };
+      const memory = state.settings.memoryEnabled && state.settings.memoryText ? '\\n\\nMemoria local autorizada por el usuario (úsala solo si es pertinente):\\n' + state.settings.memoryText : '';
+      const systemContent=(configuredPrompt.includes('IDENTIDAD OFICIAL Y PRIORITARIA DE ICS IA') ? configuredPrompt : `${IDENTITY_SYSTEM}\\n\\nInstrucciones adicionales del asistente:\\n${configuredPrompt}`) + '\\n\\n' + (modeInstructions[state.settings.assistantMode || 'general'] || modeInstructions.general) + memory;
       const messages=[{role:'system',content:systemContent},...prior];
       let response=await puter.ai.chat(messages,{model:state.settings.model||'google/gemini-2.5-flash'});
       let answer='';
@@ -257,6 +351,153 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
       setStatus('No se pudo completar la solicitud','bad');
     }finally{isSending=false;$('sendBtn').disabled=false;$('prompt').focus();}
   }
+
+  // -------- Herramientas adicionales: proyectos, investigación, notas, informes, datos y voz --------
+  function openFeature(title, description, bodyHTML, actionLabel='Guardar', action=null){
+    $('featureTitle').textContent=title;$('featureDescription').textContent=description;
+    $('featureBody').innerHTML=bodyHTML;$('featureAction').textContent=actionLabel;
+    featureActionHandler=action;$('featureOverlay').classList.add('open');$('featureOverlay').setAttribute('aria-hidden','false');
+  }
+  function closeFeature(){$('featureOverlay').classList.remove('open');$('featureOverlay').setAttribute('aria-hidden','true');featureActionHandler=null;}
+  $('closeFeature').onclick=closeFeature;
+  $('featureOverlay').addEventListener('click',e=>{if(e.target===$('featureOverlay'))closeFeature();});
+  $('featureAction').onclick=()=>{if(featureActionHandler)featureActionHandler();else closeFeature();};
+  $('featureOverlay').addEventListener('click',e=>{
+    const actions={toolProjects:openProjects,toolResearch:openResearch,toolNotes:openNotes,toolGallery:openGallery,toolData:analyzeCurrentData,toolBackup:openBackup,toolReport:makeReport};
+    if(e.target&&actions[e.target.id])actions[e.target.id]();
+  });
+  function escAttr(s){return escapeHTML(s).replace(/`/g,'&#96;');}
+  function exportBlob(name, content, type='text/plain;charset=utf-8'){
+    const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  function currentTitle(){return (currentChat()&&currentChat().title)||'Nueva conversación';}
+  function openProjects(){
+    const list=state.projects.map((p,i)=>`<div class="feature-card"><strong>${escapeHTML(p.name)}</strong><br><small>${(p.chatIds||[]).length} conversación(es)</small><div class="feature-actions"><button data-project-open="${i}">Abrir proyecto</button><button data-project-delete="${i}">Eliminar</button></div></div>`).join('');
+    openFeature('Proyectos y carpetas','Agrupa conversaciones por tema. Los proyectos se guardan localmente en este navegador.',
+      `<input id="projectName" class="feature-input" placeholder="Nombre del proyecto"><div class="feature-list">${list||'<div class="notice">Todavía no hay proyectos.</div>'}</div>`,
+      'Crear proyecto',()=>{
+        const name=$('projectName').value.trim();if(!name){alert('Escribe un nombre para el proyecto.');return;}
+        state.projects.unshift({id:'p'+Date.now(),name,chatIds:currentChat()?[currentChat().id]:[],created:Date.now()});persist();closeFeature();openProjects();
+      });
+    $('featureBody').querySelectorAll('[data-project-open]').forEach(b=>b.onclick=()=>{const p=state.projects[+b.dataset.projectOpen];const chats=state.chats.filter(c=>(p.chatIds||[]).includes(c.id));if(chats.length){state.currentId=chats[0].id;renderAll();persist();closeFeature();}else alert('Este proyecto todavía no tiene conversaciones vinculadas. Añade la conversación actual con “Guardar en proyecto”.');});
+    $('featureBody').querySelectorAll('[data-project-delete]').forEach(b=>b.onclick=()=>{if(confirm('¿Eliminar este proyecto? Las conversaciones no se borrarán.')){state.projects.splice(+b.dataset.projectDelete,1);persist();openProjects();}});
+    const attach=document.createElement('button');attach.className='secondary';attach.textContent='Guardar conversación actual en un proyecto';attach.onclick=()=>{
+      if(!state.projects.length){alert('Crea primero un proyecto.');return;}
+      openFeature('Guardar en proyecto','Elige dónde guardar la conversación actual.',`<select id="projectSelect" class="feature-select">${state.projects.map((p,i)=>`<option value="${i}">${escapeHTML(p.name)}</option>`).join('')}</select>`,'Guardar',()=>{const p=state.projects[+$('projectSelect').value];if(currentChat()&&p){p.chatIds=p.chatIds||[];if(!p.chatIds.includes(currentChat().id))p.chatIds.push(currentChat().id);persist();closeFeature();alert('Conversación añadida al proyecto.');}});
+    };$('featureBody').appendChild(attach);
+  }
+  function openNotes(){
+    const list=state.notes.map((n,i)=>`<div class="feature-card"><strong>${escapeHTML(n.title)}</strong><p>${escapeHTML(n.text).slice(0,300)}</p><small>${new Date(n.created).toLocaleString()}</small><div class="feature-actions"><button data-note-insert="${i}">Usar en chat</button><button data-note-delete="${i}">Eliminar</button></div></div>`).join('');
+    openFeature('Notas y biblioteca','Guarda fragmentos, ideas y referencias de forma local.',
+      `<input id="noteTitle" class="feature-input" placeholder="Título de la nota"><textarea id="noteText" class="feature-textarea" placeholder="Escribe o pega una nota…"></textarea><div class="feature-list">${list||'<div class="notice">Tu biblioteca está vacía.</div>'}</div>`,
+      'Guardar nota',()=>{const title=$('noteTitle').value.trim(),text=$('noteText').value.trim();if(!title||!text){alert('Completa el título y el contenido.');return;}state.notes.unshift({id:'n'+Date.now(),title,text,created:Date.now()});persist();closeFeature();openNotes();});
+    $('featureBody').querySelectorAll('[data-note-insert]').forEach(b=>b.onclick=()=>{const n=state.notes[+b.dataset.noteInsert];$('prompt').value+=($('prompt').value?'\\n\\n':'')+'Nota de biblioteca — '+n.title+'\\n'+n.text;resizeInput();closeFeature();$('prompt').focus();});
+    $('featureBody').querySelectorAll('[data-note-delete]').forEach(b=>b.onclick=()=>{state.notes.splice(+b.dataset.noteDelete,1);persist();openNotes();});
+  }
+  async function runResearch(){
+    const q=$('researchQuery').value.trim();if(!q){alert('Escribe qué quieres investigar.');return;}
+    $('researchResults').innerHTML='<div class="notice">Buscando en Wikipedia…</div>';
+    try{
+      const url='https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch='+encodeURIComponent(q)+'&format=json&origin=*&srlimit=8';
+      const data=await (await fetch(url)).json();researchResults=(data.query&&data.query.search)||[];
+      $('researchResults').innerHTML=researchResults.length?researchResults.map((r,i)=>`<div class="feature-card"><strong>${escapeHTML(r.title)}</strong><p>${escapeHTML(r.snippet.replace(/<[^>]*>/g,''))}…</p><small>Wikipedia · resultado ${i+1}</small><div class="feature-actions"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/?curid=${encodeURIComponent(r.pageid)}">Abrir fuente</a><button data-research-add="${i}">Añadir al chat</button></div></div>`).join(''):'<div class="notice">No se encontraron resultados. Prueba otros términos o consulta otras fuentes.</div>';
+      $('researchResults').querySelectorAll('[data-research-add]').forEach(b=>b.onclick=()=>{const r=researchResults[+b.dataset.researchAdd];$('prompt').value+=($('prompt').value?'\\n\\n':'')+`Fuente de investigación: ${r.title}\\n${r.snippet.replace(/<[^>]*>/g,'')}\\nWikipedia: https://en.wikipedia.org/?curid=${r.pageid}`;resizeInput();closeFeature();$('prompt').focus();});
+    }catch(e){$('researchResults').innerHTML='<div class="notice">No se pudo acceder a Wikipedia. Comprueba tu conexión o las restricciones de red. Puedes seguir usando el modo Investigación con fuentes que adjuntes manualmente.</div>';}
+  }
+  function openResearch(){
+    openFeature('Investigación web','Buscador público de artículos de Wikipedia. Úsalo como punto de partida y verifica la información con fuentes adicionales.',
+      '<input id="researchQuery" class="feature-input" placeholder="Tema, persona, acontecimiento…"><div id="researchResults" class="feature-list"></div>','Buscar',runResearch);
+    $('researchQuery').addEventListener('keydown',e=>{if(e.key==='Enter')runResearch();});
+  }
+  function openGallery(){
+    const imgs=[];state.chats.forEach(c=>(c.messages||[]).forEach(m=>{if(m.image)imgs.push({title:m.content||'Imagen generada',image:m.image,chat:c.title});}));
+    const body=imgs.length?`<div class="image-gallery">${imgs.map((x,i)=>`<div class="feature-card"><img src="${x.image}" alt="Imagen generada"><small>${escapeHTML(x.chat)}</small><p>${escapeHTML(x.title).slice(0,100)}</p><a href="${x.image}" target="_blank" rel="noopener">Abrir imagen</a></div>`).join('')}</div>`:'<div class="notice">Todavía no hay imágenes guardadas en el historial de conversaciones.</div>';
+    openFeature('Galería creativa','Las imágenes se muestran desde el historial local de conversaciones.',body,'Cerrar',closeFeature);
+  }
+  function analyzeCurrentData(){
+    const files=pendingFiles.slice();const c=currentChat();const csvMessages=(c?.messages||[]).filter(m=>m.role==='user'&&/\.csv|\.xlsx|\.xls|\.tsv/i.test(m.content||''));
+    if(!files.length){openFeature('Analizar datos','Adjunta un CSV o Excel para hacer un análisis local básico; también puedes pedir al asistente un análisis más profundo.',`<div class="notice">Adjunta un archivo con “＋ Archivo” y vuelve a abrir esta herramienta. El análisis local procesa las columnas numéricas y algunos indicadores básicos.</div>`,'Entendido',closeFeature);return;}
+    let totalRows=0,totalCols=0,numericCols=0,details=[];
+    files.forEach(f=>{
+      const lines=f.text.trim().split(/\r?\n/);const rows=lines.filter(x=>x.trim()).length;const cols=(lines[0]||'').split(/[,\t;]/).length;
+      totalRows+=Math.max(0,rows-1);totalCols=Math.max(totalCols,cols);
+      const parsed=lines.slice(1).map(line=>line.split(/[,\t;]/).map(v=>v.trim().replace(/^"|"$/g,'')));
+      const numeric=[];
+      for(let j=0;j<cols;j++){const vals=parsed.map(r=>Number((r[j]||'').replace(',','.'))).filter(Number.isFinite);if(vals.length>=2&&vals.length>=parsed.length*.5){numericCols++;const mean=vals.reduce((a,b)=>a+b,0)/vals.length;numeric.push({col:(lines[0].split(/[,\t;]/)[j]||`Columna ${j+1}`).replace(/^"|"$/g,''),count:vals.length,min:Math.min(...vals),max:Math.max(...vals),mean});}}
+      details.push(`<div class="feature-card"><strong>${escapeHTML(f.name)}</strong><p>${Math.max(0,rows-1)} filas de datos · ${cols} columnas detectadas</p>${numeric.map(n=>`<p><b>${escapeHTML(n.col)}</b>: mínimo ${n.min.toLocaleString()}, máximo ${n.max.toLocaleString()}, media ${n.mean.toLocaleString(undefined,{maximumFractionDigits:3})} (n=${n.count})</p>`).join('')||'<small>No se detectaron columnas numéricas suficientes.</small>'}</div>`);
+    });
+    openFeature('Resumen de datos','Indicadores calculados localmente sobre los archivos adjuntos. Para correlaciones, gráficos o conclusiones contextuales, solicita un análisis adicional al asistente.',
+      `<div class="data-summary"><div class="stat"><strong>${totalRows}</strong><span>Filas detectadas</span></div><div class="stat"><strong>${totalCols}</strong><span>Columnas máximas</span></div><div class="stat"><strong>${numericCols}</strong><span>Series numéricas</span></div></div><div class="feature-list">${details.join('')}</div>`,'Preguntar a ICS IA',()=>{closeFeature();$('prompt').value='Analiza los datos adjuntos. Explica tendencias, posibles anomalías, limitaciones y conclusiones sin inventar información.';resizeInput();$('prompt').focus();});
+  }
+  function makeReport(){
+    const c=currentChat();if(!c||!c.messages.length){alert('La conversación está vacía.');return;}
+    openFeature('Crear informe','Exporta la conversación como documento compatible con Word o abre una versión imprimible para guardarla como PDF.',
+      '<div class="notice">El informe incluirá el título, fecha y mensajes de la conversación actual.</div><input id="reportTitle" class="feature-input" value="'+escAttr(c.title||'Informe ICS IA')+'" placeholder="Título del informe">',
+      'Exportar Word',()=>{
+        const title=$('reportTitle').value.trim()||'Informe ICS IA';
+        const body=c.messages.map(m=>`<h3>${m.role==='user'?'Usuario':'ICS IA'}</h3><p>${escapeHTML(m.content||'').replace(/\n/g,'<br>')}</p>${m.image?`<p><img src="${m.image}" style="max-width:600px"></p>`:''}`).join('');
+        const doc=`<!doctype html><html><head><meta charset="utf-8"><title>${escapeHTML(title)}</title><style>body{font-family:Arial,sans-serif;line-height:1.5;margin:40px;color:#222}h1{color:#9d111a}h3{margin-top:24px;color:#215b4c}p{white-space:normal}</style></head><body><h1>${escapeHTML(title)}</h1><p>ICS IA · ${new Date().toLocaleString()}</p>${body}</body></html>`;
+        exportBlob('ICS-IA-informe.doc',doc,'application/msword');closeFeature();
+      });
+    const printBtn=document.createElement('button');printBtn.className='secondary';printBtn.textContent='Imprimir / guardar PDF';printBtn.onclick=()=>{
+      const title=$('reportTitle').value.trim()||'Informe ICS IA';const w=window.open('','_blank');if(!w){alert('Permite las ventanas emergentes para imprimir el informe.');return;}
+      const body=c.messages.map(m=>`<h3>${m.role==='user'?'Usuario':'ICS IA'}</h3><p>${escapeHTML(m.content||'').replace(/\n/g,'<br>')}</p>`).join('');
+      w.document.write(`<html><head><meta charset="utf-8"><title>${escapeHTML(title)}</title><style>body{font-family:Arial;line-height:1.5;margin:35px}h1{color:#9d111a}h3{margin-top:22px;color:#215b4c}</style></head><body><h1>${escapeHTML(title)}</h1><p>ICS IA · ${new Date().toLocaleString()}</p>${body}</body></html>`);w.document.close();w.focus();setTimeout(()=>w.print(),400);
+    };$('featureBody').appendChild(printBtn);
+  }
+  function openBackup(){
+    openFeature('Copia de seguridad y privacidad','Exporta proyectos, notas, configuración e historial a un archivo JSON. El archivo puede contener conversaciones privadas: guárdalo con cuidado.',
+      '<div class="notice">La información se guarda localmente en este navegador. La exportación crea una copia externa; no la envía a un servidor.</div><div class="feature-actions"><button id="backupExport">Exportar copia JSON</button><label class="secondary" style="cursor:pointer">Importar copia JSON<input id="backupImport" type="file" accept=".json,application/json" style="display:none"></label></div><button id="backupClear" class="secondary" style="margin-top:10px">Borrar memoria personal local</button>','Cerrar',closeFeature);
+    $('backupExport').onclick=()=>exportBlob('ics-ia-respaldo.json',JSON.stringify(state,null,2),'application/json;charset=utf-8');
+    $('backupImport').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const imported=JSON.parse(await f.text());if(!imported||!Array.isArray(imported.chats))throw new Error('Formato no válido');if(confirm('¿Reemplazar los datos actuales por esta copia?')){state={...state,...imported,settings:{...state.settings,...(imported.settings||{})},projects:imported.projects||[],notes:imported.notes||[]};persist();renderAll();closeFeature();alert('Copia importada.');}}catch(err){alert('No se pudo importar: '+err.message);}};
+    $('backupClear').onclick=()=>{if(confirm('¿Desactivar y vaciar la memoria personal?')){state.settings.memoryEnabled=false;state.settings.memoryText='';persist();alert('Memoria personal local desactivada y vaciada.');}};
+  }
+  function toggleVoice(){
+    const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+    if(!SR){alert('El dictado por voz no está disponible en este navegador. Prueba Chrome o Edge y revisa los permisos del micrófono.');return;}
+    if(recognition){recognition.stop();recognition=null;$('voiceBtn').classList.remove('active');return;}
+    recognition=new SR();recognition.lang='es-ES';recognition.interimResults=false;recognition.maxAlternatives=1;
+    recognition.onresult=e=>{$('prompt').value+=($('prompt').value?' ':'')+e.results[0][0].transcript;resizeInput();};
+    recognition.onerror=e=>{setStatus('Dictado por voz: '+e.error,'bad');};
+    recognition.onend=()=>{recognition=null;$('voiceBtn').classList.remove('active');};
+    $('voiceBtn').classList.add('active');recognition.start();
+  }
+  function speakLastAnswer(){
+    const c=currentChat();const last=[...(c?.messages||[])].reverse().find(m=>m.role==='assistant'&&!m.image);
+    if(!last){alert('Todavía no hay una respuesta para leer.');return;}
+    if(!('speechSynthesis' in window)){alert('La lectura en voz alta no está disponible en este navegador.');return;}
+    window.speechSynthesis.cancel();const utter=new SpeechSynthesisUtterance(last.content);utter.lang='es-ES';window.speechSynthesis.speak(utter);
+  }
+  $('speakBtn').onclick=speakLastAnswer;
+  $('toolsBtn').onclick=()=>openFeature('Centro de herramientas','Accede a las funciones de ICS IA desde PC o móvil.',
+    '<div class="feature-list"><button class="secondary" id="toolProjects">📁 Proyectos y carpetas</button><button class="secondary" id="toolResearch">🔎 Investigación web</button><button class="secondary" id="toolNotes">📚 Notas y biblioteca</button><button class="secondary" id="toolGallery">🎨 Galería de imágenes</button><button class="secondary" id="toolData">📊 Analizar datos</button><button class="secondary" id="toolBackup">💾 Copia de seguridad</button><button class="secondary" id="toolReport">📝 Crear informe Word/PDF</button></div>',
+    'Cerrar',closeFeature);
+  $('projectsBtn').onclick=openProjects;$('researchBtn').onclick=openResearch;$('notesBtn').onclick=openNotes;$('galleryBtn').onclick=openGallery;$('dataBtn').onclick=analyzeCurrentData;$('backupBtn').onclick=openBackup;$('reportBtn').onclick=makeReport;$('voiceBtn').onclick=toggleVoice;
+  $('assistantMode').value=state.settings.assistantMode||'general';
+  $('assistantMode').onchange=()=>{state.settings.assistantMode=$('assistantMode').value;persist();setStatus('Modo '+$('assistantMode').selectedOptions[0].text+' activado','ok');};
+  // Read aloud is available from the conversation menu and via Alt+R.
+  document.addEventListener('keydown',e=>{if(e.altKey&&e.key.toLowerCase()==='r')speakLastAnswer();});
+
+  function applyInterface(mode){
+    const effective=mode==='auto'?(window.matchMedia('(max-width: 760px)').matches?'mobile':'pc'):mode;
+    document.body.dataset.interface=effective;
+    document.body.classList.toggle('mobile-interface',effective==='mobile');
+    try{localStorage.setItem('icsIA.interfaceMode',mode);}catch(e){}
+  }
+  function chooseInterface(mode){
+    state.settings.interfaceMode=mode;applyInterface(mode);persist();
+    $('interfaceOverlay').classList.remove('open');
+  }
+  $('choosePC').onclick=()=>chooseInterface('pc');
+  $('chooseMobile').onclick=()=>chooseInterface('mobile');
+  $('imageModeBtn').onclick=()=>{
+    imageMode=!imageMode;
+    $('imageModeBtn').classList.toggle('active',imageMode);
+    $('imageModeBtn').setAttribute('aria-pressed',String(imageMode));
+    $('prompt').placeholder=imageMode?'Describe la imagen que quieres crear…':'Escribe tu mensaje a ICS IA…';
+    $('sendBtn').textContent=imageMode?'Crear 🎨':'Enviar ↑';
+    $('hint').textContent=imageMode?'Modo imagen activado · Describe lo que quieres generar.':'Enter para enviar · Shift+Enter para nueva línea · Comprueba la información importante antes de usarla.';
+  };
   $('sendBtn').addEventListener('click',sendMessage);
   $('prompt').addEventListener('input',resizeInput);
   $('prompt').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}});
@@ -269,22 +510,27 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
     const blob=new Blob([body],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='ics-ia-conversacion.txt';a.click();URL.revokeObjectURL(url);
   };
   $('settingsBtn').onclick=()=>{
+    $('interfaceMode').value=state.settings.interfaceMode||'auto';
     $('model').value=state.settings.model||'google/gemini-2.5-flash';
     $('systemPrompt').value=state.settings.systemPrompt||DEFAULT_SYSTEM;
     $('contextLimit').value=String(state.settings.contextLimit||24000);
+    $('memoryEnabled').checked=!!state.settings.memoryEnabled;$('memoryText').value=state.settings.memoryText||'';$('themeColor').value=state.settings.themeColor||'#e50914';
     $('settingsOverlay').classList.add('open');
   };
   $('cancelSettings').onclick=()=>$('settingsOverlay').classList.remove('open');
   $('settingsOverlay').addEventListener('click',e=>{if(e.target===$('settingsOverlay'))$('settingsOverlay').classList.remove('open');});
   $('saveSettings').onclick=()=>{
+    state.settings.interfaceMode=$('interfaceMode').value;applyInterface(state.settings.interfaceMode);
     state.settings.model=$('model').value;
     state.settings.systemPrompt=$('systemPrompt').value.trim()||DEFAULT_SYSTEM;
     state.settings.contextLimit=Number($('contextLimit').value)||24000;
+    state.settings.memoryEnabled=$('memoryEnabled').checked;state.settings.memoryText=$('memoryText').value.trim();state.settings.themeColor=$('themeColor').value;document.documentElement.style.setProperty('--accent',state.settings.themeColor);document.documentElement.style.setProperty('--blue',state.settings.themeColor);
     persist();$('settingsOverlay').classList.remove('open');setStatus('Configuración guardada','ok');
   };
   // First-run greeting is kept in the UI, not sent to the provider.
   if(!state.chats.length) createChat(); else if(!currentChat()) state.currentId=state.chats[0].id;
   renderAll();
+  document.documentElement.style.setProperty('--accent',state.settings.themeColor||'#e50914');document.documentElement.style.setProperty('--blue',state.settings.themeColor||'#e50914');
   if (location.protocol === 'file:') {
     setStatus('Abre ICS IA desde localhost o una web para activar la IA.','bad');
   } else if(window.puter&&puter.ai&&typeof puter.ai.chat==='function') {
