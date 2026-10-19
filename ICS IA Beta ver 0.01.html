@@ -49,7 +49,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{
 .stat strong{display:block;font-size:19px}.stat span{font-size:11px;color:var(--muted)}
 .image-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}.image-gallery img{width:100%;height:130px;object-fit:contain;background:#101010;border:1px solid var(--line);border-radius:9px}
 .mobile-interface .side-tools{display:none}
-@media(max-width:760px){.mode-select{max-width:85px;font-size:10px}.side-tools{display:none}.top-actions{min-width:0}.top-actions .iconbtn{font-size:12px}.feature-modal{padding:15px}.feature-modal .modal-actions{flex-wrap:wrap}}
+@media(max-width:760px){.mode-select{max-width:78px;font-size:10px}.side-tools{display:none}.top-actions{min-width:0}.top-actions .iconbtn{font-size:12px}.feature-modal{padding:15px}.feature-modal .modal-actions{flex-wrap:wrap}}
 
 </style>
 </head>
@@ -75,14 +75,18 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{
     </div>
   </aside>
   <main class="main">
-    <header class="topbar"><div class="top-title">ICS IA <span style="color:var(--muted);font-weight:400">/ Asistente de trabajo</span></div><div class="top-actions"><button class="iconbtn" id="exportBtn" title="Exportar conversación">⇩ Exportar</button><button class="iconbtn" id="clearBtn" title="Borrar conversación actual">Limpiar</button></div></header>
+    <header class="topbar"><div class="top-title">ICS IA <span style="color:var(--muted);font-weight:400">/ Asistente de trabajo</span></div><div class="top-actions">
+    <select class="iconbtn mode-select" id="assistantMode" aria-label="Modo especializado"><option value="general">💬 General</option><option value="research">🔎 Investigación</option><option value="media">📰 Medios</option><option value="documents">📄 Documentos</option><option value="writing">✍ Redacción</option><option value="creative">🎨 Creativo</option><option value="data">📊 Datos</option></select>
+    <button class="iconbtn" id="toolsBtn" title="Centro de herramientas">🧰</button><button class="iconbtn" id="speakBtn" title="Leer respuesta">🔊</button>
+    <button class="iconbtn" id="reportBtn" title="Crear informe">📝</button><button class="iconbtn" id="exportBtn" title="Exportar conversación">⇩</button><button class="iconbtn" id="clearBtn" title="Borrar conversación actual">⌫</button>
+  </div></header>
     <section class="chat" id="chat" aria-live="polite"></section>
     <div class="composer-area"><div class="composer-wrap">
       <div class="attachments" id="attachments"></div>
       <div class="composer">
         <label class="file-btn" title="Adjuntar documentos">＋ <input type="file" id="fileInput" multiple accept=".txt,.md,.csv,.json,.html,.htm,.xml,.log,.pdf,.docx,.xlsx,.xls,.tsv"></label>
         <textarea id="prompt" rows="1" placeholder="Escribe tu mensaje a ICS IA…"></textarea>
-        <button class="iconbtn image-mode" id="imageModeBtn" type="button" title="Activar o desactivar la creación de imágenes">🎨 Imagen</button><button class="send" id="sendBtn">Enviar ↑</button>
+        <button class="iconbtn" id="voiceBtn" type="button" title="Dictar por voz">🎙</button><button class="iconbtn image-mode" id="imageModeBtn" type="button" title="Activar o desactivar la creación de imágenes">🎨 Imagen</button><button class="send" id="sendBtn">Enviar ↑</button>
       </div>
       <div class="hint" id="hint">Enter para enviar · Shift+Enter para nueva línea · Comprueba la información importante antes de usarla.</div>
     </div></div>
@@ -106,9 +110,15 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{
     <div class="field"><label for="model">Modelo</label><select id="model"><option value="google/gemini-3.8-flash">Google Gemini 3.8 Flash (predeterminado)</option><option value="gpt-4o-mini">GPT-4o mini (si está disponible en tu cuenta)</option></select></div>
     <div class="field"><label for="systemPrompt">Instrucciones del asistente</label><textarea id="systemPrompt"></textarea></div>
     <div class="field"><label for="contextLimit">Límite de texto de documentos por conversación (caracteres)</label><select id="contextLimit"><option value="12000">12.000 — conservador</option><option value="24000">24.000 — equilibrado</option><option value="48000">48.000 — documentos más largos</option></select></div>
-    <div class="notice">La creación de imágenes usa puter.ai.txt2img() de Puter.js. La disponibilidad y los posibles costes o autorizaciones dependen del proveedor del servicio. Los documentos se extraen en tu navegador y su texto se envía al proveedor de IA cuando haces una pregunta sobre ellos. No adjuntes información confidencial o datos personales sin autorización. Las conversaciones se guardan en este navegador.</div>
+    <div class="field"><label><input id="memoryEnabled" type="checkbox" style="width:auto"> Activar memoria personal local</label></div>
+    <div class="field"><label for="memoryText">Memoria personal editable</label><textarea id="memoryText" placeholder="Preferencias que quieres que ICS IA tenga en cuenta"></textarea></div>
+    <div class="field"><label for="themeColor">Color de acento</label><select id="themeColor"><option value="#e50914">Rojo ICS</option><option value="#2563eb">Azul</option><option value="#7c3aed">Violeta</option><option value="#0f9d75">Verde</option><option value="#d97706">Ámbar</option></select></div>
+    <div class="notice">La creación de imágenes depende de Puter.js y de la disponibilidad del proveedor. Los documentos se extraen en tu navegador y su texto se envía al proveedor de IA cuando haces una pregunta sobre ellos. No adjuntes información confidencial sin autorización. Las conversaciones se guardan en este navegador.</div>
     <div class="modal-actions"><button class="secondary" id="cancelSettings">Cancelar</button><button class="primary" id="saveSettings">Guardar configuración</button></div>
   </div>
+</div>
+<div class="overlay" id="featureOverlay" aria-hidden="true">
+  <div class="modal feature-modal" role="dialog" aria-modal="true"><h2 id="featureTitle">Herramientas de ICS IA</h2><p id="featureDescription"></p><div id="featureBody" class="feature-body"></div><div class="modal-actions"><button class="secondary" id="closeFeature">Cerrar</button><button class="primary" id="featureAction">Guardar</button></div></div>
 </div>
 <script>
 (() => {
@@ -142,7 +152,7 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
   function persist(){ try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch(e) { setStatus('No hay espacio para guardar más historial en este navegador.', 'bad'); } }
   function currentChat(){ return state.chats.find(c => c.id === state.currentId); }
   function createChat(){
-    const c = { id: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()+Math.random())), title:'Nueva conversación', messages:[], created:Date.now() };
+    const c = { id: (window.crypto && crypto.randomUUID ? crypto.randomUUID() : String(Date.now()+Math.random())), title:'Nueva conversación', messages:[], created:Date.now() };
     state.chats.unshift(c); state.currentId=c.id; persist(); renderAll();
   }
   function setStatus(text, mode=''){
@@ -499,6 +509,7 @@ RIGOR Y TRANSPARENCIA: El enfoque editorial no autoriza inventar datos, citas, f
     $('hint').textContent=imageMode?'Modo imagen activado · Describe lo que quieres generar.':'Enter para enviar · Shift+Enter para nueva línea · Comprueba la información importante antes de usarla.';
   };
   $('sendBtn').addEventListener('click',sendMessage);
+  $('prompt').addEventListener('paste',()=>setTimeout(resizeInput,0));
   $('prompt').addEventListener('input',resizeInput);
   $('prompt').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage();}});
   $('fileInput').addEventListener('change',e=>handleFiles(Array.from(e.target.files||[])));
